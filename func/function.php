@@ -2,6 +2,7 @@
 
 function random_Pass_general($password_length)
 {
+    $pass = [];
     //array con i caratteri 
     $array_caratteri = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     $array_numeri = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
@@ -18,5 +19,5 @@ function random_Pass_general($password_length)
         $n = rand(0, $total_lenght);
         $pass[] = $totale_caratteri[$n];
     }
-    return implode($pass); //implode is join 
+    return implode($pass);
 };
