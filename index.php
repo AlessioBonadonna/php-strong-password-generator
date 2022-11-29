@@ -1,4 +1,5 @@
 <?php
+session_start();
 $password_length = $_GET['password'] ?? '';
 
 include __DIR__ . '/func/function.php';
@@ -9,7 +10,7 @@ if ($password_length === "") {
 } else {
     $password_gener = random_Pass_general($password_length);
 }
-
+$_SESSION['password'] = $password_gener;
 
 ?>
 
@@ -31,7 +32,8 @@ if ($password_length === "") {
         <button type="submit">Crea Password</button>
     </form>
     <div>
-        <h3>la tua password è <?php echo $password_gener ?> </h3>
+        <!-- <h3>la tua password è  </h3> -->
+        <a href="./printpassword.php"> Scopri la tua password </a>
     </div>
 </body>
 
